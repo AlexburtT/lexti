@@ -1,10 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 
 :root {
-    --dark: #081b29;
-	--dark-navy: #112e42;
+	font-family: Poppins, sans-serif;
+
+    color-scheme: light dark;
+    --bg-color: #081b29;
+    --navy: #112e42;
     --accent: #00abf0;
-    --light: #ededed;
+    --main: #ededed;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #ededed;
+        --navy: #ffffff;
+        --accent: #00abf0;
+        --main: #081b29;
+    }
+
+	.home {
+		background: url("../img/author2.jpg") center no-repeat;
+		/* filter: grayscale(100%); */
+	}
 }
 
 * {
@@ -14,8 +37,7 @@
 	text-decoration: none;
 	border: none;
 	outline: none;
-	scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;    
 }
 
 html {
@@ -24,8 +46,8 @@ html {
 }
 
 body {
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: var(--bg-color);
+    color: var(--main);
 }
 
 /*Section Header*/
@@ -45,13 +67,13 @@ body {
 }
 
 .header.sticky {
-	background: var(--dark);
+	background: var(--bg-color);
 }
 
 .logo {
     position: relative;
     font-size: 2.5rem;
-    color: var(--light);
+    color: var(--main);
     font-weight: 900;
 }
 
@@ -65,7 +87,7 @@ body {
 
 .navbar a {
     font-size: 1.7rem;
-    color: var(--light);
+    color: var(--main);
     font-weight: 500;
     margin-left: 3.5rem;
     transition: .3s;
@@ -84,7 +106,7 @@ body {
 	cursor: pointer;
 	width: 3.6rem;
 	height: 3.6rem;
-	fill: var(--light);
+	fill: var(--main);
 	transition: .3s;
 	display: none;
 }
@@ -101,7 +123,7 @@ body {
 
 section {
 	min-height: 100dvh;
-	padding: 10rem 9% 2rem;
+	padding: 8rem 9% 2rem;
 }
 
 /*Section Home*/
@@ -126,17 +148,13 @@ section {
     line-height: 1.3;
 }
 
-.home-content h1 span {
-	color: var(--light);
-}
-
 .home-content .text-animate {
 	position: relative;
-	width: 32.8rem;
+	width: 35.8rem;
 }
 
-.home-content .text-animate h3 {
-    font-size: 3.2rem;
+.home-content .text-animate h2 {
+    font-size: 3rem;
     font-weight: 700;
     color: transparent;
 	-webkit-text-stroke: .7px var(--accent);
@@ -146,12 +164,12 @@ section {
 	background-position: -33rem 0;
 }
 
-.home.show-animate .home-content .text-animate h3 {
+.home.show-animate .home-content .text-animate h2 {
 	animation: homeText 6s linear infinite;
 	animation-delay: 2s;
 }
 
-.home-content .text-animate h3::before {
+.home-content .text-animate h2::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -162,7 +180,7 @@ section {
 	z-index: -1;
 }
 
-.home.show-animate .home-content .text-animate h3::before {
+.home.show-animate .home-content .text-animate h2::before {
 	animation: homeCursorText 6s linear infinite;
 	animation-delay: 2s;
 }
@@ -192,7 +210,7 @@ section {
     border: .2rem solid var(--accent);
     border-radius: .8rem;
     font-size: 1.9rem;
-    color: var(--dark);
+    color: var(--bg-color);
     font-weight: 600;
     letter-spacing: .1rem;
     z-index: 1;
@@ -207,7 +225,7 @@ section {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background: var(--dark);
+	background: var(--bg-color);
 	z-index: -1;
 	transition: .5s;
 }
@@ -222,7 +240,7 @@ section {
 }
 
 .btn-box .btn:nth-child(2):hover {
-	color: var(--dark);
+	color: var(--bg-color);
 }
 
 .btn-box .btn:nth-child(2)::before {
@@ -277,7 +295,7 @@ section {
 }
 
 .home-sci a:hover svg {
-    fill: var(--dark);
+    fill: var(--bg-color);
 }
 
 .home-imgHover {
@@ -291,14 +309,14 @@ section {
 }
 
 .home-imgHover:hover {
-    background: var(--dark);
+    background: var(--bg-color);
     opacity: .8;
 }
 
 /*KEYFRAMES ANIMATION*/
 @keyframes homeText {
 	0%, 10%, 100% {
-		background-position: -33rem 0;
+		background-position: -36rem 0;
 	}
 
 	65%, 85% {
@@ -330,14 +348,13 @@ section {
 	align-items: center;
 	flex-direction: column;
 	gap: 2rem;
-	background: var(--dark-navy);
+	background: var(--navy);
 	padding-bottom: 6rem;
 }
 
 .heading {
 	position: relative; /*only animate*/
 	font-size: 5rem;
-	margin-bottom: 3rem;
 	text-align: center;
 }
 
@@ -369,8 +386,8 @@ span {
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	border-top: .2rem solid var(--dark-navy);
-	border-bottom: .2rem solid var(--dark-navy);
+	border-top: .2rem solid var(--navy);
+	border-bottom: .2rem solid var(--navy);
 	border-left: .2rem solid var(--accent);
 	border-right: .2rem solid var(--accent);
 	animation: aboutSpinner 8s linear infinite;
@@ -398,7 +415,7 @@ span {
 }
 
 .btn-box.about-btn a::before {
-	background: var(--dark-navy);
+	background: var(--navy);
 }
 
 /*Keyframe about*/
@@ -474,7 +491,7 @@ span {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background: var(--dark-navy);
+	background: var(--navy);
 	z-index: -1;
 	transition: .5s;
 }
@@ -513,7 +530,7 @@ span {
 .skills {
 	min-height: auto;
 	padding-bottom: 7rem;
-	background: var(--dark-navy);
+	background: var(--navy);
 }
 
 .skills h2 { /*only animate*/
@@ -559,7 +576,7 @@ span {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background: var(--dark);
+	background: var(--bg-color);
 	z-index: -1;
 	transition: .5s;
 }
@@ -579,7 +596,7 @@ span {
 }
 
 .skills-content .progress h3 span {
-	color: var(--light);
+	color: var(--main);
 }
 
 .skills-content .progress .bar {
@@ -668,7 +685,7 @@ span {
 	height: 100%;
 	padding: 1.5rem;
 	font-size: 1.6rem;
-	color: var(--light);
+	color: var(--main);
 	background: transparent;
 	border-radius: .6rem;
 	border: .2rem solid var(--accent);
@@ -676,7 +693,7 @@ span {
 
 .contact form .input-box .input-field input::placeholder,
 .contact form .textarea-field textarea::placeholder {
-	color: var(--light);
+	color: var(--main);
 }
 
 .contact form .focus {
@@ -685,7 +702,7 @@ span {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background: var(--dark-navy);
+	background: var(--navy);
 	border-radius: .6rem;
 	z-index: -1;
 	transition: .5s;
@@ -720,7 +737,7 @@ span {
 	align-items: center;
 	flex-wrap: wrap;
 	padding: 2rem 9%;
-	background: var(--dark-navy);
+	background: var(--navy);
 }
 
 .footer-text,
@@ -752,7 +769,7 @@ span {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background: var(--dark-navy);
+	background: var(--navy);
 	z-index: -1;
 	transition: .5s;
 }
@@ -762,7 +779,7 @@ span {
 }
 
 .footer-iconTop a svg {
-	fill: var(--dark);
+	fill: var(--bg-color);
 	transition: .5s;
 }
 
@@ -803,7 +820,7 @@ span {
 
 @media (width < 768px) {
 	.header {
-		background: var(--dark);
+		background: var(--bg-color);
 	}
 
 	#menu-icon svg {
@@ -834,7 +851,7 @@ span {
 		left: -100%;
 		width: 100%;
 		height: 100%;
-		background: var(--dark);
+		background: var(--bg-color);
 		border-top: .1rem solid rgba(0, 0, 0, .2);
 		z-index: -1;
 		transition: .25s ease;
@@ -878,7 +895,12 @@ span {
 	}
 
 	.home-content h1 {
-		font-size: 5rem;
+		font-size: 4rem;
+		padding-bottom: 1rem;
+	}
+
+	.home-content h1 span {
+		color: var(--main);
 	}
 
 	.home-sci {
@@ -920,7 +942,7 @@ span {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background: var(--dark);
+	background: var(--bg-color);
 	z-index: 98;
 }
 
@@ -944,7 +966,7 @@ span {
 
 section:nth-child(odd) .animate.scroll,
 .footer .animate.scroll {
-	background: var(--dark-navy);
+	background: var(--navy);
 }
 
 .education .education-box .animate.scroll {
