@@ -16,20 +16,6 @@
     -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-color: #ededed;
-        --navy: #ffffff;
-        --accent: #00abf0;
-        --main: #081b29;
-    }
-
-	.home {
-		background: url("../img/author2.jpg") center no-repeat;
-		/* filter: grayscale(100%); */
-	}
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -312,6 +298,22 @@ section {
     background: var(--bg-color);
     opacity: .8;
 }
+
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #ddecec;
+        --navy: #FFFCF6;
+        --accent: #0026F2;
+        --main: #081b29;
+    }
+
+	.home {
+		background: url("../img/author-light.jpg") center no-repeat;
+		background-size: cover;
+	}
+}
+
 
 /*KEYFRAMES ANIMATION*/
 @keyframes homeText {
