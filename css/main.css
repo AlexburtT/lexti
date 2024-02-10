@@ -300,7 +300,7 @@ section {
 }
 
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #ddecec;
         --navy: #FFFCF6;
@@ -435,7 +435,7 @@ span {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	min-height: auto;
+	/* min-height: auto; */
 	padding-bottom: 5rem;
 }
 
@@ -530,8 +530,10 @@ span {
 /*Skills section*/
 
 .skills {
-	min-height: auto;
-	padding-bottom: 7rem;
+	
+	/* align-items: center; */
+	/* min-height: auto; */
+	/* padding-bottom: 7rem; */
 	background: var(--navy);
 }
 
@@ -651,19 +653,22 @@ span {
 /*Section contact*/
 
 .contact {
-	min-height: auto;
-	padding-bottom: 7rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 90vh;
 }
 
 .contact h2 { /*only animate*/
 	display: inline-block;
-	left: 50%;
+	left: 20%;
 	transform: translateX(-50%);
 }
 
 .contact form {
-	max-width: 70rem;
-	margin: 0 auto;
+	width: 70%;
+	/* margin: 0 auto; */
 	text-align: center;
 }
 
